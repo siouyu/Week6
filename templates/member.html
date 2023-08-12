@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member</title>
+    <link rel="stylesheet" type="text/css" href="/static/layout.css" />
+</head>
+<body>
+    <h1 class="titleOne">歡迎光臨，這是會員頁</h1>
+    <div class="word">{{ name }}，歡迎登入系統</div>
+    <div class="back">
+        <form action="/signout">
+            <button class="backHome" type="sumbit" href="" name="signout">登出系統</button>
+        </form>
+    </div>
+    <hr/>
+    <div class="word">快來留言吧</div>
+    <div class="containerThree">
+        <div class="centerThree">
+            <form action="/createMessage" method="post">
+                <div>
+                    <label for="content" class="detail">內容</label>
+                    <input class="inputDetail" name="message" placeholder="Leave a message!" input type="text"/>
+                </div>
+                <div class="signInBtn" method="post">
+                    <button class="button" type="submit" id="sentBtn">送出</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br>
+    {% for i in i %}
+    <div class="box">
+        <div class="user">{{ i[0] }} </div>
+        <div class="message">&nbsp;: {{ i[1] }}</div>
+    </div>
+    {% endfor %}
+</body>
+</html>
